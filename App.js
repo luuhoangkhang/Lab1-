@@ -68,7 +68,7 @@ function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>USER MANAGER</Text>
+      <Text style={styles.title}>Quan Ly Nguoi Dung</Text>
 
       <View style={styles.form}>
         <TextInput
@@ -86,12 +86,12 @@ function App() {
         />
         <TextInput
           style={styles.input}
-          placeholder="Tuổi"
+          placeholder="Age"
           value={newUser.age}
           onChangeText={(text) => setNewUser({ ...newUser, age: text })}
           keyboardType="numeric"
         />
-        <Button title="Thêm Người Dùng" onPress={handleAddUser} />
+        <Button title="Add User" onPress={handleAddUser} />
       </View>
 
       {loading ? (
@@ -121,16 +121,16 @@ function App() {
                     onChangeText={(text) => setEditingUser({ ...editingUser, age: text })}
                     style={styles.input}
                   />
-                  <Button title="Lưu" onPress={() => handleUpdateUser(item.id)} />
-                  <Button title="Hủy" onPress={() => setEditingUser(null)} />
+                  <Button title="Save" onPress={() => handleUpdateUser(item.id)} />
+                  <Button title="Cancel" onPress={() => setEditingUser(null)} />
                 </>
               ) : (
                 <>
                   <Text>{item.name}</Text>
                   <Text>{item.email}</Text>
                   <Text>{item.age}</Text>
-                  <Button title="Sửa" onPress={() => setEditingUser(item)} />
-                  <Button title="Xóa" onPress={() => handleDeleteUser(item.id)} />
+                  <Button title="Edit" onPress={() => setEditingUser(item)} />
+                  <Button title="Delete" onPress={() => handleDeleteUser(item.id)} />
                 </>
               )}
             </View>
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 40,
     textAlign: 'center',
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: 'blue',
     borderWidth: 1,
     marginBottom: 10,
     paddingLeft: 10,
